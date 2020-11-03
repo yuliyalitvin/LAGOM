@@ -1,0 +1,89 @@
+@import '../node_modules/@syncfusion/ej2-base/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-calendars/styles/material.css';
+.e-calendar .e-content td .e-today .e-selected:hover span.e-day,
+.e-calendar .e-content td .e-selected:hover span.e-day,
+.e-calendar .e-content td .e-selected .e-focused-date span.e-day,
+.e-bigger.e-small .e-calendar .e-content td .e-today .e-selected:hover span.e-day,
+.e-bigger.e-small .e-calendar .e-content td .e-selected:hover span.e-day,
+.e-bigger.e-small .e-calendar .e-content td .e-selected .e-focused-date span.e-day {
+    background-color: dodgerblue;
+    color: #fff;
+}
+
+.e-btn.e-flat.e-primary,
+.e-css.e-btn.e-flat.e-primary .e-btn.e-flat.e-primary:hover,
+.e-css.e-btn.e-flat.e-primary:hover {
+    color: dodgerblue;
+    border: 0px;
+    background-color: transparent;
+    font-size: 13px;
+}
+
+.e-calendar .e-header .e-title {
+    color: dodgerblue;
+}
+
+.e-calendar .e-content td.e-selected:hover span.e-day,
+.e-calendar .e-content.e-decade td.e-selected:hover span.e-day,
+.e-calendar .e-content.e-year td.e-selected:hover span.e-day,
+.e-calendar .e-content td.e-selected span.e-day {
+    background-color: dodgerblue;
+}
+
+.e-calendar .e-content .e-other-month span.e-day,
+.e-calendar .e-content span,
+.e-calendar th,
+.e-calendar .e-header .e-title:hover,
+.e-calendar .e-header .e-prev:hover>span,
+.e-calendar .e-date-icon-prev,
+.e-calendar .e-date-icon-next,
+.e-calendar .e-date-icon-prev:hover,
+.e-calendar .e-date-icon-next:hover,
+.e-calendar .e-header.e-decade .e-title,
+.e-calendar .e-header .e-next:hover>span,
+.e-calendar .e-content td.e-selected span.e-day {
+    color: whitesmoke;
+}
+
+.e-calendar .e-content td.e-focused-date span.e-day {
+    background-color: rgba(192, 192, 192, 0.8);
+    color: #000;
+}
+
+.e-calendar .e-content td.e-today span.e-day,
+.e-calendar .e-content td.e-focused-date.e-today span.e-day,
+.e-calendar .e-content td.e-today:hover span.e-day,
+.e-calendar .e-content td.e-focused-date.e-today:hover span.e-day {
+    background-color: whitesmoke;
+    color: dodgerblue;
+    border: 1px solid dodgerblue;
+}
+
+.e-calendar .e-content td.e-today.e-selected span.e-day,
+.e-bigger.e-small .e-calendar .e-content td.e-today.e-selected span.e-day {
+    background-color: dodgerblue;
+    border: 1px solid dodgerblue;
+    box-shadow: inset 0 0 0 2px #fff;
+    color: #fff;
+}
+
+.e-calendar .e-content.e-year td>span.e-day,
+.e-calendar .e-content.e-decade td>span.e-day {
+    background-color: transparent;
+}
+
+.e-calendar .e-content td.e-focused-date span.e-day {
+    color: dodgerblue;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #222;
+}

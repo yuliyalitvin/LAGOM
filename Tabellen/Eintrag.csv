@@ -1,0 +1,6 @@
+EintragID,Datum,Titel,Untertitel,Text,Notiz,Anmerkung
+3001,2020/05/01,"Tag 1: MySQL Start","Schritt 1:","Zuerst muss man sich MySQL runterladen.","Beim Mac gibt es Sonderheiten.","Es macht Spaß!"
+3002,2020/05/12,Meeting,"Besprechung mit der Crew",NULL,"Auf Discord.","Pünktlich sein!"
+3003,2020/05/11,Abgabe,Datenbanken,NULL,NULL,"Vorzeitig hochladen!"
+3004,2022/03/01,"Bachelorarbeit Abgeben","Bald durch!!!",NULL,"Bald ist es zu ende!","Durchhalten... "
+3005,2020/05/31,Auslandsbewerbungsdeadline,NULL,NULL,NULL,NULL

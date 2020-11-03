@@ -1,0 +1,343 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #222;
+    margin: 0;
+    padding: 0;
+}
+root{
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+#container{
+    position: relative;
+    width: 90%;
+    min-width: 1380px;
+    max-width: 1440px;
+    height: 80vh;
+    max-height: 790px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    grid-template-rows: minmax(110px, auto);
+    grid-auto-flow: dense;
+    grid-gap: 3px; 
+    margin: 0;
+}
+.content{         
+    width: 100%;
+    height: 100%;
+    display: block;
+    box-sizing: border-box;
+    position: relative;
+}
+#navbar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 6vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    clear: both;
+    color: #fff;
+    background: #333;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+#navbar ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+#navbar ul li{
+    display: block; 
+    text-decoration: none;
+    float: left; 
+    margin: 0;
+    padding: 1% 3%;
+    width: 27%; 
+    height: 98%;
+    text-align: center;
+}
+#navbar ul li:hover{
+    color: dodgerblue;
+}
+
+#container .field{
+    background: #333;
+    padding: 20px 10px;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    color: #fff;
+    transition: 0.5s;
+}
+a,
+a:visited{
+    color:whitesmoke;
+}
+#container .field:hover{
+    background: black;
+    color: whitesmoke;
+    opacity: 1;  
+}
+#Tagebuch{
+    grid-column: span 1;
+    grid-row: span 3;
+}
+#Kalender{
+    grid-column: span 1;
+    grid-row: span 6;
+}
+.e-day{
+    color:#fff;
+}
+
+
+
+#Kalender .content{
+    width: 100%;
+    height: 100%;
+}
+#Kalender .content .list{
+    height: 180px;
+    overflow: auto;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    position: absolute;
+}
+@media (max-height: 830px){
+    #Kalender .content .list{
+        height: 110px;
+    }
+    #Tagebuch .content .list,
+    #Ziele .content .list{
+        height: 170px;
+    }
+    #Erinnerung .content .list{
+        height: 120px;
+    }
+}
+#Kalender .content .month{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(55px,auto));
+    grid-auto-flow: dense;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 5px;
+    box-sizing: border-box;
+    
+}
+#Kalender .content .month #today{
+    border: 1px solid dodgerblue;
+}
+#Kalender .content .month .day{
+    grid-column: span 1;
+    height:55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#Kalender .content .month .dayevent{ 
+   grid-column: span 1;
+   height: 50px;
+   border-bottom: 3px solid dodgerblue;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+#Kalender .content .month .day:hover{
+    background-color:rgba(192,192,192,0.8);
+}
+#Kalender .content .month .dayz{
+    grid-column: span 1;
+    height:55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:  dodgerblue;
+}
+#Ziele{
+    grid-column: span 1;
+    grid-row: span 3;
+}
+#Ziele .list{
+    height: 210px;
+}
+#Tagebuch .list{
+    height: 210px;
+}
+#ToDo{
+    grid-column: span 1;
+    grid-row: span 4;
+}
+#Motivation{
+    grid-column: span 1;
+    grid-row: span 1;
+}
+#Motivation .list{
+    height: 140px;
+}
+#Motivation h3{
+    margin-bottom: 0;
+}
+
+#Erinnerung{
+    grid-column: span 1;
+    grid-row: span 3;
+}
+#Erinnerung .list{
+    height: 180px;
+    overflow: auto;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    position: absolute;
+}
+#Galerie{
+    grid-column: span 1;
+    grid-row: span 1;
+}
+#Galerie .field{ 
+    padding: 1px;
+}
+#Galerie .content{
+    height: 150px;
+    width: 100%;
+    overflow-y: scroll;
+}
+#Galerie .content .listcontent{
+    height: 150px;
+    background-color: transparent;
+    border: 0px solid white;
+    width: auto;
+    display:flex;
+    justify-content: center;
+}
+#Galerie img{
+    width: auto;
+    height: 150px;
+}
+.list{
+    height: 80%;
+    overflow: auto;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    position: absolute;
+}
+.listcontent{
+    background-color:rgba(0,0,0,0.5);
+    width: calc(100% - 15px);
+    border-left: 5px solid dodgerblue;
+    padding: 3px 5px;
+    margin-bottom: 5px;
+    text-align: left;
+}
+.listcontent:hover{
+    background-color:rgba(192,192,192,0.8);
+}
+.content p{
+    margin: 3px;
+}
+#ToDo .content .list {
+    overflow-x: hidden;
+}
+#ToDo .content .list .do input{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 25px;
+    width: 300px;
+    margin: 0;
+    left:0;
+}  
+#ToDo .content .list .do .checkmark {
+    height: 23px;
+    margin-right: 5px;
+    width: 23px;
+    border: 1px solid dodgerblue;
+    float: left;
+}
+#ToDo .content .list .do input:checked ~ label{
+    text-decoration: line-through;
+}
+#ToDo .content .list .do input:checked ~ .checkmark {
+    background-color: dodgerblue;
+}
+#ToDo .content .list .do .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+#ToDo .content .list .do input:checked ~ .checkmark:after {
+     display: block;
+}
+#ToDo .content .list .do .checkmark:after {
+    width: 5px;
+    height: 10px;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+} 
+#ToDo .content .list .do{
+    height: auto;
+    width: 455px;
+    display: flex;
+    clear: both;
+    padding: 3px 5px;
+    margin-bottom: 3px;
+    text-align: left;
+    align-items: center;
+}
+#ToDo .content .list .do:hover{
+    background-color:rgba(192,192,192,0.8);
+}
+.delete{
+    background-color: dodgerblue;
+    height: inherit;
+    height: 30px;
+    width: 30px;
+    float: right;
+    cursor: pointer;
+    border-radius: 5px; 
+    padding-left: 5px;
+    padding-top: 5px;
+    margin: 5px;
+}
+.update{
+    background-color: dodgerblue;
+    height: inherit;
+    height: 30px;
+    width: 30px;
+    float: right;
+    cursor: pointer;
+    border-radius: 5px; 
+    padding-left: 5px;
+    padding-top: 5px;
+    margin: 5px;
+}
+.add {
+    width: 150px;
+    height: 50px;
+    border-radius: 5px; 
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    bottom: 3vh;
+    right: 02vw;
+    z-index: 11;
+    display: flex;
+    color: white;
+    cursor: pointer;
+    background-color: dodgerblue;
+}
+.add span{
+    margin: 5px;
+}

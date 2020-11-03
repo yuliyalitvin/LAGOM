@@ -1,0 +1,44 @@
+<div class="box">
+  <h2>{{registrierungTitel}}</h2>
+  <form [formGroup]="neuerNutzer" (ngSubmit)="submit(neuerNutzer.value)">
+    <br>
+    <br>
+    <div class="inputBox">
+      <div class="field">
+        <div class="control">
+          <input type="text" required="" formControlName="Nutzername" (change)="changeNutzername($event.target.value)">
+          <label>Nutzername: </label>
+        </div>
+      </div>
+    </div>
+    <div class="inputBox">
+      <div class="field">
+        <div class="control">
+          <input type="text" required="" formControlName="GanzerName">
+          <label>Ganzer Name: </label>
+        </div>
+      </div>
+    </div>
+    <div class="inputBox">
+      <div class="field">
+        <div class="control">
+          <input type="text" required="" formControlName="Email">
+          <label>Email: </label>
+        </div>
+      </div>
+    </div>
+    <div class="inputBox" style="margin:'0'">
+      <div class="field">
+        <div class="control" style="height: auto">
+          <input style="margin:'0'" type="text" required="" formControlName="Passwort">
+          <label>Passwort: </label>
+        </div>
+      </div>
+    </div>
+    <div style="margin:'15px 0'; color: red" class="field has-text-danger">{{nachricht}}</div>
+    <input id="bestaetigen" type="submit" value="bestätigen">
+  </form>
+  <a routerLink="/login">
+    <input id="zurueck" type="submit" value="zurück">
+  </a>
+</div>

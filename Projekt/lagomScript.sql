@@ -1,0 +1,1 @@
+select * from nutzer, bild, erinnerung, eintrag, galerie, kalender, motivation, tagebuch, toDo, workspace, ziel; 

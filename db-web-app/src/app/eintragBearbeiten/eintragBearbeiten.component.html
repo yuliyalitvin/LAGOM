@@ -1,0 +1,52 @@
+<div id="overlay">
+  <div id="Eintrag">
+    <h2>{{Titel}}</h2>
+    <br><br>
+    <form *ngFor="let eintrag of eintraege">
+      <br>
+      <br>
+      <div class="inputBox">
+        <div class="field">
+          <div class="control">
+            <input type="date" name="Datum" required="" class="form-control" placeholder="ex. YYYY/MM/DD"
+              [ngModel]="eintrag.Datum | date : 'yyyy-MM-dd'" (ngModelChange)="modelChangeDate($event)">
+            <label>Datum</label>
+          </div>
+        </div>
+      </div>
+      <div class="inputBox" *ngIf="uhr">
+        <input type="time" name="Uhrzeit" [(ngModel)]="eintrag.Uhrzeit">
+        <label>Uhrzeit</label>
+      </div>
+      <div class="inputBox">
+        <div class="field">
+          <div class="control">
+            <input type="text" name="Titel" required="" [(ngModel)]="eintrag.Titel">
+            <label>Titel</label>
+          </div>
+        </div>
+      </div>
+      <div class="inputBox">
+        <input type="text" name="Untertitel" [(ngModel)]="eintrag.Untertitel">
+        <label>Untertitel</label>
+      </div>
+      <div class="inputBox">
+        <input type="text" name="Text" required="" [(ngModel)]="eintrag.Text">
+        <label>Text</label>
+      </div>
+      <div class="inputBox">
+        <input type="text" name="Notiz" [(ngModel)]="eintrag.Notiz" #NotizInput>
+        <label>Notiz</label>
+      </div>
+      <div class="inputBox">
+        <input style="margin:'0'" type="text" name="Anmerkung" [(ngModel)]="eintrag.Anmerkung">
+        <label>Anmerkung</label>
+      </div>
+
+      <div style="margin:'15px 0';color: red" class="field has-text-danger">{{nachricht}}</div>
+
+      <input id="aktualisieren" type="submit" value="Aktualisiere Daten" (click)="aktualisiereEintrag()">
+    </form>
+    <input id="zurueck" (click)="goBack()" type="submit" value="zurück">
+  </div>
+</div>

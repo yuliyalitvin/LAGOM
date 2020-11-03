@@ -1,0 +1,156 @@
+<head>
+    <!-- Verlinkung zum style -->
+    <link type="text/css" rel="stylesheet" href="main.component.css">
+</head>
+
+<body>
+    <!-- Navi -->
+    <div id="navbar">
+        <ul>
+            <li style="font-weight: bold"><img style="height: 13px;" src="/assets/lagomIcon.png"> Lagom </li>
+            <li style="color: dodgerblue ; font-size:'20px'" *ngFor="let nutzer of nutzerdaten | async">
+                {{nutzer.GanzerName}}</li>
+            <a routerLink="/login">
+                <li>Abmelden</li>
+            </a>
+
+        </ul>
+    </div>
+    <!-- Erstellen button -->
+    <a (click)="eintragErstellen()">
+        <div class="add"><img src="/assets/img/hinzufuegen.png" height="25px"> <span>Neuer Eintrag</span></div>
+    </a>
+
+    <div id="container">
+        <!-- Tagebuch -->
+        <div class="field" id="Tagebuch">
+            <div class="content">
+                <p>Tagebuch</p>
+                <div class="list">
+                    <div class="listcontent" *ngFor="let tagebuch of tagebuch | async">
+                        <div class="delete" (click)="deleteTagebuch(tagebuch)"><img src="/assets/img/loeschen.png" height="25px"></div>
+                        <a routerLink="/eintragBearbeiten/Tagebuch/{{tagebuch.EintragID}}">
+                            <div class="update"><img src="/assets/img/bearbeiten.png" height="25px"></div>
+                        </a>
+                        <p>{{tagebuch.Datum | date : 'dd.MM.yyyy'}}</p>
+                        <p>{{tagebuch.Titel}}</p>
+                        <p>{{tagebuch.Untertitel}}</p>
+                        <p>{{tagebuch.Text}}</p>
+                        <p>{{tagebuch.Notiz}}</p>
+                        <p>{{tagebuch.Anmerkung}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Kalender -->
+        <div class="field" id="Kalender">
+            <div class="content">
+                <ejs-calendar style="margin: auto; margin-bottom: 10px; background-color: transparent; border: 0px; color: #fff">
+                </ejs-calendar>
+                <div class="list">
+                    <div class="listcontent" *ngFor="let kalender of kalender | async">
+                        <div class="delete" (click)="deleteKalender(kalender)"><img src="/assets/img/loeschen.png" height="25px"></div>
+                        <a routerLink="/eintragBearbeiten/Kalender/{{kalender.EintragID}}">
+                            <div class="update"> <img src="/assets/img/bearbeiten.png" height="25px"></div>
+                        </a>
+                        <p>{{kalender.Datum | date : 'dd.MM.yyyy'}}</p>
+                        <p>{{kalender.Uhrzeit}}</p>
+                        <p>{{kalender.Titel}}</p>
+                        <p>{{kalender.Untertitel}}</p>
+                        <p>{{kalender.Text}}</p>
+                        <p>{{kalender.Notiz}}</p>
+                        <p>{{kalender.Anmerkung}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Ziele -->
+        <div class="field" id="Ziele">
+            <div class="content">
+                <p>Ziele</p>
+                <div class="list">
+                    <div class="listcontent" *ngFor="let ziel of ziele | async">
+                        <div class="delete" (click)="deleteZiel(ziel)"><img src="/assets/img/loeschen.png" height="25px"></div>
+                        <a routerLink="/eintragBearbeiten/Ziel/{{ziel.EintragID}}">
+                            <div class="update"><img src="/assets/img/bearbeiten.png" height="25px"></div>
+                        </a>
+                        <p>{{ziel.Datum | date : 'dd.MM.yyyy'}}</p>
+                        <p>{{ziel.Titel}}</p>
+                        <p>{{ziel.Untertitel}}</p>
+                        <p>{{ziel.Text}}</p>
+                        <p>{{ziel.Notiz}}</p>
+                        <p>{{ziel.Anmerkung}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- To Do Liste -->
+        <div class="field" id="ToDo">
+            <div class="content">
+                <p>ToDo</p>
+                <div class="list">
+                    <div class="do" *ngFor="let todo of todos | async ">
+                        <div style="width: 75%;">
+                            <input type="checkbox" [checked]="todo.Erledigt" (click)="erledigt(todo)">
+                            <span class="checkmark"></span>
+                            <label>
+                                <ul style="margin: 0">
+                                    <li style="list-style: none">{{todo.Datum | date : 'dd.MM.yyyy'}} </li>
+                                    <li style="list-style: none">{{todo.Titel}}</li>
+                                    <li style="list-style: none">{{todo.Untertitel}}</li>
+                                    <li style="list-style: none">{{todo.Text}}</li>
+                                    <li style="list-style: none">{{todo.Notiz}}</li>
+                                    <li style="list-style: none">{{todo.Anmerkung}}</li>
+                                </ul>
+                            </label>
+                        </div>
+                        <div style="float: right;">
+                            <div class="delete" (click)="deleteToDo(todo)"><img src="/assets/img/loeschen.png" height="25px"></div>
+                            <a routerLink="/eintragBearbeiten/ToDo/{{todo.EintragID}}">
+                                <div class="update"><img src="/assets/img/bearbeiten.png" height="25px"></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Erinnerungen -->
+        <div class="field" id="Erinnerung">
+            <div class="content">
+                <p>Erinnerung</p>
+                <div class="list">
+                    <div class="listcontent" *ngFor="let erinnerung of erinnerungen | async ">
+                        <div class="delete" (click)="deleteErinnerung(erinnerung)"><img src="/assets/img/loeschen.png" height="25px"></div>
+                        <a routerLink="/eintragBearbeiten/Erinnerung/{{erinnerung.EintragID}}">
+                            <div class="update"><img src="/assets/img/bearbeiten.png" height="25px"></div>
+                        </a>
+                        <p>{{erinnerung.Datum | date : 'dd.MM.yyyy'}}</p>
+                        <p>{{erinnerung.Uhrzeit}}</p>
+                        <p>{{erinnerung.Titel}}</p>
+                        <p>{{erinnerung.Untertitel}}</p>
+                        <p>{{erinnerung.Text}}</p>
+                        <p>{{erinnerung.Notiz}}</p>
+                        <p>{{erinnerung.Anmerkung}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Motivation -->
+        <div class="field" id="Motivation">
+            <div class="content">
+                <p>Motivation</p>
+                <div *ngFor="let motivation of motivationen | async">
+                    <h3>{{motivation.Text}}</h3>
+                </div>
+            </div>
+        </div>
+        <!-- Galerie -->
+        <div class="field" id="Galerie">
+            <div class="content">
+                <div class="listcontent" *ngFor="let galerie of galerien | async">
+                    <img src="{{galerie.Pfad}}">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
